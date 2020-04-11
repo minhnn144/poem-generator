@@ -1,9 +1,10 @@
 from lib.vnlp import vnlp
 from lib.data_utils import data_utils
 from tqdm import tqdm
-inp_len = 20
+inp_len = 25
 out_len = 28
-att_text = "Tình yêu"
+att_len = 5
+att_text = "Lãng mạn, Hiện đại, Tiếc nuối"
 
 padd = ("<PAD>", [0]*300)
 
@@ -16,6 +17,7 @@ att = []
 out = []
 with open('./raws/data.txt', 'r') as f:
     data = f.read().split("\n\n\n")
+    att_vecs = [nlp.to_vector(t) for t in att_text.lower().split(", ")]
     for i in tqdm(range(len(data))):
         inp_toks = nlp.get_token(nlp.normalization(data[i]), POS=["N"])
         inp_toks = list(set(inp_toks))
@@ -23,9 +25,14 @@ with open('./raws/data.txt', 'r') as f:
         inp_vecs = [nlp.to_vector(t) for t in inp_toks]
         inp.append(inp_vecs)
 
-        att.append([nlp.to_vector(att_text)])
+        att.append(att_vecs)
 
-        out_vecs = [nlp.to_vector(w) for w in data[i].split()][:out_len]
+        out_toks = nlp.normalization(data[i]).split()
+        if len(out_toks) < out_len:
+            print(out_toks)
+            print("miss match")
+            out_toks = nlp.fill_sequence(out_toks, padd[0], out_len)
+        out_vecs = [nlp.to_vector(w) for w in out_toks][:out_len]
         out.append(out_vecs)
 
 data_utils.pickle_data('/data/vectorized/input.pkl', inp)
