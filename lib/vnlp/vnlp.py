@@ -2,7 +2,7 @@ import numpy as np
 from numpy.linalg import norm
 import pickle
 import underthesea
-
+from underthesea import pos_tag
 import spacy
 from spacy.language import Language
 
@@ -39,7 +39,7 @@ class VNlp:
 
     def add_vector(self, word, vector):
         """Add more word with vector to vocabulary
-        
+
         Arguments:
             word {str} -- word text
             vector {list[num]} -- vector of word
@@ -50,7 +50,7 @@ class VNlp:
             return
         self.nlp.vocab.set_vector(word, vector)
 
-    def load_copus(self, vectors_corpus):
+    def load_corpus(self, vectors_corpus):
         """Load data from corpus file
 
         Arguments:
@@ -71,7 +71,7 @@ class VNlp:
 
     @staticmethod
     def cosine_distance(vector1, vector2):
-        """Caculate cosine distance of 2 vectors
+        """Calculate cosine distance of 2 vectors
 
         Arguments:
             vector1 {list(num)} -- first vector
@@ -93,9 +93,35 @@ class VNlp:
         """
         # print(sent)
         return list(self.nlp(sent).vector)
+    
+    @staticmethod
+    def fill_sequence(seq, tok, max_len, direction="Head"):
+        """Expand a sequence token list with token to fit max length
+        
+        Arguments:
+            seq {list} -- current sequence token list
+            tok {str} -- token will be use to fill
+            max_len {int} -- size of output token list
+        
+        Keyword Arguments:
+            direction {str} -- Head or Tail control location of fill list (default: {"Head"})
+        
+        Returns:
+            list -- token list after filling
+        """
+        assert len(seq) <= max_len, "Max length was smaller than sequence length"
+        miss = max_len - len(seq)
+        fill = [tok] * miss
+        if direction == "Head":
+            fill.extend(seq)
+            return fill
+        elif direction == "Tail":
+            seq.extend(fill)
+            return seq
+        return
 
     @staticmethod
-    def normalization(document: str, black_list: str = "[\W_]+") -> str:
+    def normalization(document: str, black_list: str = "[\W_]+"):
         """normalize a document with remove black list character and multiple space
 
         Arguments:
@@ -109,13 +135,32 @@ class VNlp:
         """
         document = re.sub(black_list, " ", document.lower())
         return re.sub("\s+", " ", document)
+    @staticmethod
+    def get_token(sentence, POS):
+        """Get tokens from sentence with specific POS list
+
+        Arguments:
+            sentence {str} -- input sentence
+
+        Keyword Arguments:
+            POS {list} -- accept POS
+
+        Returns:
+            list -- token list
+        """
+        tokens = pos_tag(sentence)
+        out = []
+        for i in tokens:
+            if i[1] in POS:
+                out.append(i[0])
+        return out
 
     def get_closest(self, vector):
         """Get closest word from input vector with cosine distance
-        
+
         Arguments:
             vector {list(num)} -- input vector
-        
+
         Returns:
             str -- output word
         """
@@ -128,15 +173,15 @@ class VNlp:
         return text
 
     @staticmethod
-    def tokenize(sentence, rm_stopwords=True):
+    def tokenize(sentence, POS_accept=0, rm_stopwords=True):
         """split a input string to token
-        
+
         Arguments:
             sentence {str} -- input string
-        
+
         Keyword Arguments:
             rm_stopwords {bool} -- remove stopwords or not (default: {True})
-        
+
         Returns:
             list(str) -- output list of tokens
         """
@@ -177,7 +222,7 @@ class VNlp:
         """load model from bin file
 
         Arguments:
-            path {str} -- save file locaiton
+            path {str} -- save file location
         """
         with open(root + path, 'rb') as f:
             self.nlp.from_bytes(pickle.load(f))
