@@ -11,17 +11,20 @@
 ## Progress
 
 - [x] idea.
-- [ ] data preparation.
+- [x] data preparation.
 - [ ] model training.
 - [ ] evaluation.
 - [ ] model improvement.
 - [ ] frontend.
 
 ## Requirements
-- python >= 3.6
-- torch, torchvision 
+- python 3.x
+- torch, torchvision
+- spacy, pyvi, underthesea for vietnamese processing
 
-## Data preparing
+## Data preparation
+
+![Data preparation](./img/data_preparation.png)
 
 ## Model training
 
