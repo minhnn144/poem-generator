@@ -168,8 +168,11 @@ class VNlp:
             print("size of input vector not fit!")
             return
         vector = np.asarray(vector, dtype='f')
-        key = self.nlp.vocab.vectors.most_similar(np.asarray([vector]), n=1)
-        text = self.nlp.vocab.strings[key[0][0][0]]
+        key = self.nlp.vocab.vectors.most_similar(np.asarray([vector]), n=1, batch_size=1)
+        key = key[0]
+        if key.shape != (1, 1):
+            return "<UNK>"
+        text = self.nlp.vocab.strings[key[0][0]]
         return text
 
     @staticmethod

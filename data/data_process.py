@@ -11,7 +11,7 @@ padd = ("<PAD>", [0]*300)
 nlp = vnlp.VNlp()
 nlp.from_bin("/model/wiki.vi.model")
 nlp.add_vector(padd[0], padd[1])
-
+nlp.to_bin("/model/wiki.vi.model")
 inp = []
 att = []
 out = []
