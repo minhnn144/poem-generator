@@ -26,13 +26,13 @@ def att_vectorize(sent, max_len):
 
 
 def get_closest(vecs):
-    t = [nlp.get_closest(v) for v in vecs]
+    t = [nlp.get_closest(v.data.numpy())[0] for v in vecs]
     return " ".join(t)
 
 
 def predict(model, inp, att):
     vecs = model(inp, att)
-    return vecs[0].data.numpy()
+    return vecs[0]
 
 
 def main():
@@ -48,7 +48,7 @@ def main():
     inp = torch.FloatTensor(inp).view(1, inp_len, word_size).to(device)
     att = torch.FloatTensor(att).view(1, att_len, word_size).to(device)
     out = predict(Generator, inp, att)
-    # print(out)
+    print(out.size())
     print(get_closest(out))
     pass
 

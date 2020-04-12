@@ -23,7 +23,7 @@ class Encoder(nn.Module):
 
 
 class Attention(nn.Module):
-    def __init__(self, in_size, hid_size, num_layers=1):
+    def __init__(self, in_size, hid_size, num_layers=2):
         super(Attention, self).__init__()
         self.BiLSTM = nn.LSTM(input_size=in_size, hidden_size=hid_size,
                               num_layers=num_layers, batch_first=True, bidirectional=True)
@@ -58,9 +58,9 @@ class GNet(nn.Module):
         super(GNet, self).__init__()
         self.out_len = out_len
         self.Encoder = Encoder(
-            word_size, 200, out_size=out_len, seq_len=in_len, num_layers=2, dropout=0.2)
+            word_size, 400, out_size=out_len, seq_len=in_len, num_layers=4, dropout=0.2)
         self.Attention = Attention(word_size, 100)
-        self.Decoder = Decoder(600, 200, word_size, 2, dropout=0.2)
+        self.Decoder = Decoder(1000, 400, word_size, 4, dropout=0.2)
 
     def forward(self, inp, att):
         en, hid, cel = self.Encoder(inp)

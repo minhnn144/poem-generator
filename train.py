@@ -32,7 +32,7 @@ def main():
     epochs = 1
     inp_len = 25
     out_len = 28
-    att_len = 1
+    att_len = 5
     word_size = 300
     learning_rate = 0.001
     chkp_path = "./model/train.chkp"
