@@ -45,6 +45,9 @@ class VNlp:
             vector {list[num]} -- vector of word
         """
         vector = np.asarray(vector, dtype='f')
+        if word in self.nlp.vocab:
+            print('word was in vocabulary')
+            return
         if vector.size != len(self.to_vector("hi")):
             print('vector size not fit!')
             return
@@ -93,19 +96,19 @@ class VNlp:
         """
         # print(sent)
         return list(self.nlp(sent).vector)
-    
+
     @staticmethod
     def fill_sequence(seq, tok, max_len, direction="Head"):
         """Expand a sequence token list with token to fit max length
-        
+
         Arguments:
             seq {list} -- current sequence token list
             tok {str} -- token will be use to fill
             max_len {int} -- size of output token list
-        
+
         Keyword Arguments:
             direction {str} -- Head or Tail control location of fill list (default: {"Head"})
-        
+
         Returns:
             list -- token list after filling
         """
@@ -135,6 +138,7 @@ class VNlp:
         """
         document = re.sub(black_list, " ", document.lower())
         return re.sub("\s+", " ", document)
+
     @staticmethod
     def get_token(sentence, POS):
         """Get tokens from sentence with specific POS list
@@ -159,7 +163,7 @@ class VNlp:
         """Get closest word from input vector with cosine distance
 
         Arguments:
-            vector {list(num)} -- input vector
+            vector {list} -- input vector
 
         Returns:
             str -- output word
@@ -167,10 +171,13 @@ class VNlp:
         if len(vector) != len(self.to_vector("hi")):
             print("size of input vector not fit!")
             return
-        vector = np.asarray(vector, dtype='f')
-        key = self.nlp.vocab.vectors.most_similar(np.asarray([vector]), n=1)
-        text = self.nlp.vocab.strings[key[0][0][0]]
-        return text
+        closest = ["", [], float('inf')]
+        for k in self.nlp.vocab.strings:
+            v = self.nlp.vocab.get_vector(k)
+            cos_dis = self.cosine_distance(vector, v)
+            if cos_dis < closest[2]:
+                closest = [k, v, cos_dis]
+        return closest
 
     @staticmethod
     def tokenize(sentence, POS_accept=0, rm_stopwords=True):
