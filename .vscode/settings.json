@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/c/Users/maong/Projects/poem-generator/.venv/bin/python",
+    "python.pythonPath": ".venv/bin/python",
     "python.testing.unittestArgs": [
         "-v",
         "-s",

@@ -14,12 +14,12 @@
 - [x] data preparation.
 - [ ] model training:
 
-  - [ ] training with generator.
+  - [x] training with generator.
   - [ ] add discriminator.
 
 - [ ] evaluation.
 - [ ] model improvement.
-- [ ] frontend.
+- [x] frontend.
 
 ## Requirements
 
@@ -37,10 +37,17 @@
 
 ![Generator](./img/generator.png)
 
-**Stage 1:** Train without discrimination
+- **Criterion:** MSELoss
+- **Optimizer:** Adam
 
-- **Criterion:**
-- **Optimizer:**
+**Stage 1:** Train without discrimination use pre-trained word2vec
+
+- Use pre-trained word embedding model fasttext and baomoi
+-> **Fail**
+
+**Stage 2:** Train without discrimination and pre-trained word2vec
+
+- train uni-gram pytorch embedding
 
 ### Discriminator
 

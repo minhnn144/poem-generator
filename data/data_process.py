@@ -1,41 +1,58 @@
-from lib.vnlp import vnlp
 from lib.data_utils import data_utils
-from tqdm import tqdm
-inp_len = 25
-out_len = 28
-att_len = 5
-att_text = "Lãng mạn, Hiện đại, Tiếc nuối"
+import re
 
-padd = ("<PAD>", [0]*300)
+class Dictionary(object):
+    def __init__(self):
+        self.word2idx = {}
+        self.idx2word = []
 
-nlp = vnlp.VNlp()
-nlp.from_bin("/model/baomoi.vn.300.model")
-# nlp.add_vector(padd[0], padd[1])
-# nlp.to_bin("/model/baomoi.vn.300.model")
-inp = []
-att = []
-out = []
-with open('./raws/data.txt', 'r') as f:
-    data = f.read().split("\n\n\n")
-    att_toks = att_text.lower().split(", ")
-    att_toks = nlp.fill_sequence(att_toks[:att_len], padd[0], att_len)
-    att_vecs = [nlp.to_vector(t) for t in att_toks]
-    for i in tqdm(range(len(data))):
-        inp_toks = nlp.get_token(nlp.normalization(data[i]), POS=["N"])
-        inp_toks = list(set(inp_toks))
-        inp_toks = nlp.fill_sequence(inp_toks[:inp_len], padd[0], inp_len)
-        inp_vecs = [nlp.to_vector(t) for t in inp_toks]
-        inp.append(inp_vecs)
+    def add_word(self, word):
+        if word not in self.word2idx:
+            self.idx2word.append(word)
+            self.word2idx[word] = len(self.idx2word) - 1
+        return self.word2idx[word]
+    
+    def __len__(self):
+        return len(self.idx2word)
 
-        att.append(att_vecs)
+def main():
+    dictionary = Dictionary()
 
-        out_toks = nlp.normalization(data[i]).split()
-        if len(out_toks) < out_len:
-            print("miss match")
-            out_toks = nlp.fill_sequence(out_toks, padd[0], out_len)
-        out_vecs = [nlp.to_vector(w) for w in out_toks][:out_len]
-        out.append(out_vecs)
+    control_toks = ["<SOS>", "<EOS>", "<PAD>", "<BRK>"]
+    for i in control_toks:
+        dictionary.add_word(i)
 
-data_utils.pickle_data('/data/vectorized/input.pkl', inp)
-data_utils.pickle_data('/data/vectorized/att.pkl', att)
-data_utils.pickle_data('/data/vectorized/output.pkl', out)
+    blacklist_token = "[\W_]+"
+    seq_len = 35
+    inp_list = []
+    out_list = []
+    with open("./raws/data.txt", 'r') as f:
+        raw = f.read()
+        poems = raw.split("\n\n\n")
+        for p in poems:
+            lines = p.split("\n")
+            p_toks = []
+            for l in lines:
+                l_norm = re.sub(blacklist_token, " ", l.lower())
+                l_norm = re.sub("\s+", " ", l_norm)
+                l_toks = l_norm.split(" ") + ["<BRK>"]
+                for t in l_toks:
+                    idx = dictionary.add_word(t)
+                    p_toks.append(idx)
+            del p_toks[-1]
+            inp_toks = [dictionary.word2idx["<SOS>"]] + p_toks
+            inp_toks = inp_toks[:seq_len] + [dictionary.word2idx["<PAD>"]] * (seq_len - len(inp_toks))
+            out_toks = p_toks + [dictionary.word2idx["<EOS>"]]
+            out_toks = out_toks[:seq_len] + [dictionary.word2idx["<PAD>"]] * (seq_len - len(out_toks))
+            inp_list.append(inp_toks)
+            out_list.append(out_toks)
+
+    data_utils.pickle_data('/data/vectorized/inp_idx.pkl', inp_list)
+    data_utils.pickle_data('/data/vectorized/out_idx.pkl', out_list)
+    data_utils.pickle_data('/data/vectorized/word_list.pkl', dictionary)
+    print(len(inp_list[0]))
+    print(len(dictionary))
+
+
+if __name__ == "__main__":
+    main()
