@@ -12,6 +12,7 @@ import argparse
 parser = argparse.ArgumentParser()
 
 parser.add_argument("--dev", action="store_true")
+parser.add_argument("--overfit", action="store_true")
 parser.add_argument("--gpu", type=int, default=0)
 parser.add_argument("--batch", type=int, default=32)
 parser.add_argument("--epoch", type=int, default=10)
@@ -59,6 +60,12 @@ word_size = 1524
 hid_size = 100
 seq_len = 35
 
-model = PoemGeneratorLightning(word_size, embed_size, hid_size, drop_rate=args.drop, lr=args.lr, batch_size=args.batch)
-trainer = pl.Trainer(fast_dev_run=args.dev, max_epochs=args.epoch, gpus=args.gpu)
-trainer.fit(model)
+
+if args.overfit:
+    model = PoemGeneratorLightning(word_size, embed_size, hid_size, drop_rate=args.drop, lr=args.lr, batch_size=1)
+    trainer = pl.Trainer(gpus=args.gpu, overfit_batches=1)
+    trainer.fit(model)
+else:
+    model = PoemGeneratorLightning(word_size, embed_size, hid_size, drop_rate=args.drop, lr=args.lr, batch_size=args.batch)
+    trainer = pl.Trainer(fast_dev_run=args.dev, max_epochs=args.epoch, gpus=args.gpu)
+    trainer.fit(model)

@@ -32,7 +32,7 @@ class Decoder(nn.Module):
         _out = out.reshape(out.size(0) * out.size(1), out.size(2))
         _out = self.Linear(_out)
         out = _out.reshape(out.size(0), out.size(1), -1)
-        out = torch.sigmoid(out)
+        out = torch.relu(out)
         return out
 
 class Attention(nn.Module):
