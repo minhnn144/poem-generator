@@ -56,7 +56,7 @@ class PoemGeneratorLightning(pl.LightningModule):
 
 embed_size = 301
 word_size = 1524
-hid_size = 200
+hid_size = 100
 seq_len = 35
 
 model = PoemGeneratorLightning(word_size, embed_size, hid_size, drop_rate=args.drop, lr=args.lr, batch_size=args.batch)

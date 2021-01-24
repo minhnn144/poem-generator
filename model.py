@@ -6,11 +6,14 @@ class Encoder(nn.Module):
     def __init__(self, inp_size, hid_size, drop_rate):
         super(Encoder, self).__init__()
         self.Dropout = nn.Dropout(drop_rate)
-        self.BiLSTM = nn.LSTM(inp_size, hid_size, num_layers=3)
+        self.BiLSTM = nn.LSTM(inp_size, hid_size, num_layers=1, bidirectional=True)
+        self.Linear = nn.Linear(hid_size * 2, hid_size)
 
     def forward(self, inp):
         out = self.Dropout(inp)
         out, (hid, cel) = self.BiLSTM(out)
+        out = self.Linear(out)
+        out = torch.sigmoid(out)
         return out, hid, cel
 
 
@@ -18,13 +21,13 @@ class Decoder(nn.Module):
     def __init__(self, inp_size, hid_size, out_size, drop_rate):
         super(Decoder, self).__init__()
         self.Dropout1 = nn.Dropout(drop_rate)
-        self.GRU = nn.GRU(inp_size, hid_size, num_layers=2, batch_first=True)
+        self.GRU = nn.GRU(inp_size, hid_size, num_layers=1, batch_first=True)
         self.Dropout2 = nn.Dropout(drop_rate)
         self.Linear = nn.Linear(hid_size, out_size)
 
     def forward(self, inp):
         out = self.Dropout1(inp)
-        out,(hid, cel) = self.GRU(inp)
+        out, hid = self.GRU(out)
         out = self.Dropout2(out)
         _out = out.reshape(out.size(0) * out.size(1), out.size(2))
         _out = self.Linear(_out)
