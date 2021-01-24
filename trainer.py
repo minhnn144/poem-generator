@@ -16,15 +16,14 @@ parser.add_argument("--overfit", action="store_true")
 parser.add_argument("--gpu", type=int, default=0)
 parser.add_argument("--batch", type=int, default=32)
 parser.add_argument("--epoch", type=int, default=10)
-parser.add_argument("--lr", type=float, default=0.01)
-parser.add_argument("--drop", type=float, default=0.001)
+parser.add_argument("--lr", type=float, default=0.0001)
 
 args = parser.parse_args()
 
 class PoemGeneratorLightning(pl.LightningModule):
-    def __init__(self, word_size, embed_size, hid_size, batch_size=32, lr=0.0001, drop_rate=0.001, *args, **kwargs):
+    def __init__(self, word_size, embed_size, hid_size, batch_size=32, lr=0.0001, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.model = PoemGeneratorModel(word_size, embed_size, hid_size, drop_rate)
+        self.model = PoemGeneratorModel(word_size, embed_size, hid_size)
         self.batch_size = batch_size
         self.lr = lr
     
@@ -57,15 +56,15 @@ class PoemGeneratorLightning(pl.LightningModule):
 
 embed_size = 301
 word_size = 1524
-hid_size = 100
+hid_size = 200
 seq_len = 35
 
 
 if args.overfit:
-    model = PoemGeneratorLightning(word_size, embed_size, hid_size, drop_rate=args.drop, lr=args.lr, batch_size=1)
+    model = PoemGeneratorLightning(word_size, embed_size, hid_size, lr=args.lr, batch_size=1)
     trainer = pl.Trainer(gpus=args.gpu, overfit_batches=1)
     trainer.fit(model)
 else:
-    model = PoemGeneratorLightning(word_size, embed_size, hid_size, drop_rate=args.drop, lr=args.lr, batch_size=args.batch)
+    model = PoemGeneratorLightning(word_size, embed_size, hid_size, lr=args.lr, batch_size=args.batch)
     trainer = pl.Trainer(fast_dev_run=args.dev, max_epochs=args.epoch, gpus=args.gpu)
     trainer.fit(model)
