@@ -50,6 +50,7 @@ class PoemGeneratorLightning(pl.LightningModule):
         predict = self(inp, att)
         predict = predict.reshape(-1, word_size, seq_len)
         loss = F.cross_entropy(predict, out)
+        self.log('loss', loss, on_step=True, on_epoch=True, prog_bar=True, logger=True)
         return loss
 
 
