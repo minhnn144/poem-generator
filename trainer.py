@@ -31,7 +31,7 @@ class PoemGeneratorLightning(pl.LightningModule):
 
     def setup(self, stage: str):
         inp_ = "/data/vectorized/inp_idx.pkl"
-        ctr_ = "/data/vectorized/att_idx.pkl"
+        ctr_ = "/data/vectorized/ctr_idx.pkl"
         out_ = "/data/vectorized/out_idx.pkl"
         dataset = PoemDataset(inp_, ctr_, out_)
         train_size = int(0.8 * len(dataset))
