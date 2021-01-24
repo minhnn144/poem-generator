@@ -137,3 +137,4 @@ dmypy.json
 
 **/lightning_logs
 **/wiki.vi.bin
+**/.vscode/*

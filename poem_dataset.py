@@ -1,10 +1,10 @@
 import torch
-from lib.data_utils import data_utils
+from lib import data_utils
 from torch.utils.data.dataset import Dataset
 
 
 class PoemDataset(Dataset):
-    def __init__(self, inp_file, ctr_file, out_file, transform=None) -> None:
+    def __init__(self, inp_file, ctr_file, out_file) -> None:
         self.inp = data_utils.unpickle_file(inp_file)
         self.ctr = data_utils.unpickle_file(ctr_file)
         self.out = data_utils.unpickle_file(out_file)

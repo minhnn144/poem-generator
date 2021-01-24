@@ -12,7 +12,6 @@ tqdm = "*"
 torch = "*"
 pytorch-lightning = "*"
 torchvision = "*"
-msgpack-python = "*"
 fasttext = "*"
 
 [requires]

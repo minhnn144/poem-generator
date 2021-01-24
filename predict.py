@@ -1,33 +1,48 @@
-from lib.data_utils import data_utils
-from model import Generator
 import torch
-from data.data_process import Dictionary
+import argparse
+from lib import data_utils, vnlp
+from lib.dictionary import Dictionary
+from pytorch_lightning.core.lightning import LightningModule
+from model import PoemGeneratorLightning
 
-device = "cuda:0" if torch.cuda.is_available() else "cpu"
+parser = argparse.ArgumentParser()
 
-embed_size = 300
-word_size = 2048
-hid_size = 200
-seq_len = 35
-chkp_path = "./model/model.chkp"
+parser.add_argument("--config", default="/config.ini")
+parser.add_argument("--chkp", default="lightning_logs/version_100/checkpoints/epoch=999-step=999.ckpt")
+parser.add_argument("--random", action="store_true")
 
+args = parser.parse_args()
+
+config = data_utils.load_config(args.config)
+
+embed_size = config.getint('DEFAULT', 'emb_size')
+word_size = config.getint('DEFAULT', 'word_size')
+hid_size = config.getint('DEFAULT', 'hid_size')
+seq_len = config.getint('DEFAULT', 'seq_len')
+
+chkp_path = args.chkp
+
+nlp = vnlp.VNlp('model/wiki.vi.bin')
 corpus = data_utils.unpickle_file("/data/vectorized/word_list.pkl")
-inp_ = torch.tensor(corpus.word2idx["mưa"])
-inp_ = inp_.reshape(1, -1)
+inp_ = torch.tensor(corpus.vectors[corpus.word2idx["<SOS>"]])
 
-model = Generator(word_size, embed_size, hid_size).to(device)
+if args.random:
+    inp_ += 0
 
-model.load_state_dict(torch.load(chkp_path))
+sentiments = ["Mưa", "gió", "lạnh"]
+sent = nlp.combined_vector(sentiments)
 
-sent = ["mưa"]
-for i in range(40):
-    out = model(inp_)
+model = PoemGeneratorLightning.load_from_checkpoint(chkp_path, strict=False)
+model.freeze()
+
+
+outputs = []
+for i in range(seq_len):
+    out = model(inp_, sent)
     out = out.squeeze().exp()
     out = torch.multinomial(out, 1)[0]
     tok = corpus.idx2word[int(out)]
-    if tok == "<EOS>":
-        break
-    sent.append(tok)
+    outputs.append(tok)
     inp_ = out.view(1, -1)
-print(len(sent))
-print(" ".join(sent))
+print(len(outputs))
+print(" ".join(outputs))
