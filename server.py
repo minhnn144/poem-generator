@@ -4,12 +4,12 @@ import argparse
 from lib import data_utils, vnlp
 from lib.dictionary import Dictionary
 from model import PoemGeneratorLightning
-from flask import Flask, make_response, request
+from flask import Flask, make_response, request, jsonify
 
 parser = argparse.ArgumentParser()
 
 parser.add_argument("--config", default="/config.ini")
-parser.add_argument("--chkp", default="lightning_logs/version_102/checkpoints/epoch=58-step=58.ckpt")
+parser.add_argument("--chkp", default="lightning_logs/version_0/checkpoints/last.ckpt")
 
 args = parser.parse_args()
 
@@ -34,6 +34,7 @@ def index():
 @app.route("/predict", methods=['POST'])
 def predict():
     data = request.get_json()
+    print(data)
     inp_ = torch.FloatTensor(corpus.vectors[corpus.word2idx["<SOS>"]])
     inp_ = inp_.reshape(1, 1, -1)
 
@@ -42,6 +43,7 @@ def predict():
     sent = sent.reshape(1, -1)
 
     model = PoemGeneratorLightning.load_from_checkpoint(chkp_path, strict=True, word_size=word_size, embed_size=embed_size, hid_size=hid_size, seq_len=seq_len)
+    model.eval()
     model.freeze()
 
     outputs = []
@@ -55,6 +57,6 @@ def predict():
         inp_ = inp_.reshape(1, 1, -1)
     print(len(outputs))
     print(" ".join(outputs))
-    return make_response(data=outputs)
+    return make_response(jsonify({'result': ' '.join(outputs)}), 200)
 
 app.run("0.0.0.0", 1998)

@@ -13,6 +13,7 @@ torch = "*"
 pytorch-lightning = "*"
 torchvision = "*"
 fasttext = "*"
+fsspec = "*"
 flask = "*"
 
 [requires]
