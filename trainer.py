@@ -44,7 +44,8 @@ if args.overfit:
     trainer.fit(model)
 else:
     if args.resume != "":
-        model = PoemGeneratorLightning.load_from_checkpoint(args.resume, word_size=word_size, embed_size=embed_size, hid_size=hid_size, seq_len=seq_len, lr=args.lr, batch_size=args.batch)
+        logging.info('Loading state')
+        model = PoemGeneratorLightning.load_from_checkpoint(args.resume, strict=True, word_size=word_size, embed_size=embed_size, hid_size=hid_size, seq_len=seq_len, lr=args.lr, batch_size=args.batch)
     else:
         model = PoemGeneratorLightning(word_size, embed_size, hid_size, seq_len, lr=args.lr, batch_size=args.batch)
     trainer = pl.Trainer(fast_dev_run=args.dev, max_epochs=args.epoch, gpus=args.gpu, checkpoint_callback=checkpoint_callback)
