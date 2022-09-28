@@ -696,7 +696,7 @@ Học trò, vui tươi, xao xuyến
 Bãi trường mãn khoá mộng tương lai
 Đại học đề tên góp sức tài
 Chẳng phụ cô thầy công giảng dạy
-Thôi cùng ước hẹn… ở ngày mai.
+Thôi cùng ước hẹn ở ngày mai.
 
 Trường học, vui tươi, mong ước
 
@@ -1536,7 +1536,7 @@ Hài hước, ẩm thực, vui tươi
 Thu này kỉ niệm phải không anh
 Hỏi gió vì đâu chuyện chẳng thành
 Kẻ bước chân đi buồn rớt lại
-Em…ngồi kéo sợi vá mong manh.
+Em ngồi kéo sợi vá mong manh.
 
 Mùa thu, cô đơn, luyến tiếc
 
@@ -1544,7 +1544,7 @@ Mùa thu, cô đơn, luyến tiếc
 Ve rền gợi nhớ những yêu thương
 Lặng lẽ mình ta dưới mái trường
 Kiếm bạn tìm thầy sao vắng vẻ
-Mi buồn…rướm nhẹ giọt sầu vương
+Mi buồn rướm nhẹ giọt sầu vương
 
 Mùa hè, trường học, hồi ức
 
@@ -1560,7 +1560,7 @@ Thiên nhiên, mênh mang, nhẹ nhàng
 Chuông chùa vẳng lại trong thanh vắng
 Phảng phất hương bay tỏa khói mờ
 Lễ phật cầu tâm chân thiện mỹ
-An lành giản dị cõi này… mơ !
+An lành giản dị cõi này mơ !
 
 Thanh tịnh, phật pháp, lững lờ
 
@@ -1608,7 +1608,7 @@ An nhiên, yên tĩnh, khuyên nhủ
 Anh về phía biển chiều phai nắng
 Gởi lại tình ca chốn hẹn hò
 Một nửa ngày vui theo ngọn sóng
-Em chờ bến đợi… nhớ… âu lo.
+Em chờ bến đợi nhớ âu lo.
 
 Buồn bã, cô đơn, hẹn ước
 
@@ -1648,7 +1648,7 @@ Chiều muộn, man mác, nhung nhớ
 Tứ tuyệt đêm khuya rã rích buồn
 U hoài gõ mãi điệu mưa tuôn
 Trăng hờn vận lạc sai câu ý
-Lặn cả vào mây… hoá suối nguồn.
+Lặn cả vào mây hoá suối nguồn.
 
 Trống trải, cô đơn, lộn xộn
 
@@ -1656,7 +1656,7 @@ Trống trải, cô đơn, lộn xộn
 Bản Giốc mây bay thác phủ mờ
 Quay về Pác Pó cảnh nên thơ
 Lê – nin suối nhỏ qua ghềnh đá
-Lữ khách dừng chân… quả bất ngờ.
+Lữ khách dừng chân quả bất ngờ.
 
 Thiên nhiên, vui sướng, tận hưởng
 
@@ -1664,7 +1664,7 @@ Thiên nhiên, vui sướng, tận hưởng
 Ngõ tối em về chỉ bóng đêm
 Vầng trăng khuyết nửa ngã bên thềm
 Cô đơn đợi cửa từng giây phút
-Dĩ vãng đôi mình… kỉ niệm êm.
+Dĩ vãng đôi mình kỉ niệm êm.
 
 Đêm muộn, hồi ức, đượm buồn
 
@@ -1672,15 +1672,15 @@ Dĩ vãng đôi mình… kỉ niệm êm.
 Ngoảnh lại mùa thu đã chết rồi
 Từ ngày trút cạn chén ly bôi
 Bao chiều lá đổ vàng nhung nhớ
-Dõi mắt sông Tương… bến lỡ bồi.
+Dõi mắt sông Tương bến lỡ bồi.
 
 Mùa thu, hồi ức, đượm buồn
 
 
-Giã biệt… mùa thu dưới khoảng đồi
+Giã biệt mùa thu dưới khoảng đồi
 Trăng chiều cũng nhuốm vị chia phôi
 Ngoài sông gió thổi con đò lạnh
-Nhạn khuất trời nam… bến lở bồi !
+Nhạn khuất trời nam bến lở bồi !
 
 Chia xa, đượm buồn, đìu hiu
 
@@ -1688,23 +1688,23 @@ Chia xa, đượm buồn, đìu hiu
 Náo nhiệt tưng bừng giải “Ớ – rô”
 Đông vui tấp nập hiệu cầm đồ
 Gia tài xế hộp vừa thêm cánh
-Lãi suất trên trời… vẫn “đáp” vô.
+Lãi suất trên trời vẫn “đáp” vô.
 
 Hài hước, vui tươi, châm biếm
 
 
 “Xẻ dọc Trường Sơn đi cứu nước”
-Anh về… nhiễm độc chất da cam
+Anh về nhiễm độc chất da cam
 Con thơ mấy đứa không lành lặn
-Nước mắt thời bình… hận lũ tham…!
+Nước mắt thời bình hận lũ tham !
 
 Thương cảm, hồi ức, đau buồn
 
 
-Đã gặp… nhưng rồi không thể nói
+Đã gặp nhưng rồi không thể nói
 Bao lời chất chứa nặng trong tim
 Người đi bỏ bẫng thu vàng lá
-Mắc nợ lời yêu… gió mãi tìm !
+Mắc nợ lời yêu gió mãi tìm !
 
 Chia xa, mong chờ, bâng khuâng
 
@@ -1712,7 +1712,7 @@ Chia xa, mong chờ, bâng khuâng
 Nửa ánh trăng gầy nằm sóng xoãi
 Trên cành liễu rũ gió đong đưa
 Hồn thơ níu mộng lay mành trúc
-Ngỡ bước anh về… phía giậu thưa…
+Ngỡ bước anh về phía giậu thưa 
 
 Mong chờ, đêm trăng, đượm buồn
 
@@ -1720,7 +1720,7 @@ Mong chờ, đêm trăng, đượm buồn
 Thuở bé nhà dì con ở lại
 Đôi lần nóng sốt chẳng ai chăm
 Chờ hoài đợi mãi không người đón
-Vắng mẹ… là trăng thiếu ánh rằm.
+Vắng mẹ là trăng thiếu ánh rằm.
 
 Nhớ thương, đau buồn, đêm trăng
 
@@ -1816,7 +1816,7 @@ Nhung nhớ, say đắm, mùa xuân
 Một chút mùa xuân còn đứng đợi
 Em có kịp về giữa phố xa
 Nhớ nhé mùa xuân ngân tiếng gọi
-Ngàn năm em vẫn cứ như là…
+Ngàn năm em vẫn cứ như là 
 
 Mùa xuân, say đắm, tình yêu
 
@@ -1976,7 +1976,7 @@ Mùa xuân, tiếc nuối
 Tất cả giờ đây phai nhạt rồi
 Chỉ còn trong tôi ký ức thôi
 Một thuở xuân về bên bếp lửa
-Nấu bánh thâu đêm… rộn tiếng cười
+Nấu bánh thâu đêm rộn tiếng cười
 
 Mùa xuân, hồi ức, tiếc nuối
 
@@ -2024,7 +2024,7 @@ Mùa xuân, chua xót, hồi ức
 Năm tháng trôi đời ta rất xa
 Biển trời sông nước mãi bao la
 Rồi thời sẽ hết tình sẽ chết
-Hững hờ chi tình cũ đã già …
+Hững hờ chi tình cũ đã già 
 
 TÌnh yêu, hồi ức, đau buồn
 
@@ -2208,7 +2208,7 @@ Hồi ức, tiếc nuối
 Tình ái hôm nào vẫn trong tôi
 Câu hát yêu thương vẫn gọi mời
 Sao em đành lòng trong lặng lẽ
-Cất bước theo chồng…để sầu khơi??
+Cất bước theo chồng để sầu khơi??
 
 Đượm buồn, hồi ức
 
@@ -2237,7 +2237,7 @@ Bản nhạc ngày xưa bỗng buồn tênh
 CHia xa, mong nhớ, đau buồn
 
 
-Ngày không nhau…từ nay thôi nhé!
+Ngày không nhau từ nay thôi nhé!
 Giấc mơ yêu mãi mãi lụi tàn
 Ngày không nhau nẻo về lặng lẽ
 Vẫy tay chào mộng ảo trần gian..!
@@ -2261,7 +2261,7 @@ Như ủ hầm sâu rượu sủi tăm
 Say đắm, tương tư
 
 
-Như rượu lưu niên càng ngấm say…
+Như rượu lưu niên càng ngấm say 
 Em yêu! Nghiêng bóng đẹp đôi mày
 Tóc mun nghiêng bóng mành tơ nhẹ
 Ru dịu lòng anh trong phút giây
@@ -2333,7 +2333,7 @@ Tựa lá thu phai rụng cuối trời!
 Hồi ức, mong nhớ, cô đơn
 
 
-Mùa đã sang …trời giăng tím mây
+Mùa đã sang trời giăng tím mây
 Ai mang thương nhớ bỏ nơi này?
 Cho lá thu xưa buồn mong mỏi
 Rụng tàn héo úa gió lùa bay
@@ -2350,7 +2350,7 @@ Buồn bã, cô đơn, yên tĩnh
 
 
 Mùa về rơi rụng bao nhiêu lá?
-Mà thu vội vã…tình quắt quay
+Mà thu vội vã tình quắt quay
 Thu đến thu đi trong hối hả
 Vương mãi tim người hồn đắm say
 
@@ -2370,13 +2370,15 @@ Chút nắng la đà ửng má em
 Trải sắc hanh vàng giăng khắp lối
 Nhìn hoàng hôn xuống rớt êm đềm
 
-
+Mùa thu, êm đềm, chiều tà
 
 
 Mùa thu chợt đến hồn yên ắng
 Ngắm lá rơi hoa nắng tiễn người
 Lữ khách sang đò tiếng vọng ơi !
-Hồn tôi nức nở hay thu ngỡ …
+Hồn tôi nức nở hay thu ngỡ 
+
+Mùa thu, tiễn biệt, con đò
 
 
 Thu đến thật rồi gió lẻ loi
@@ -2384,11 +2386,15 @@ Trời hanh chút nắng bỏ đi rồi
 Ngõ xưa hoang vắng sầu buông khẽ
 Chạm đến hồn thơ chiếc lá rơi
 
+Mùa thu, vắng vẻ, lá rơi
+
 
 Hôm nay thu khóc nỗi phân kỳ
 Ký ức trôi về kể biệt li
 Nhốt hết vào tim dòng nhật ký
 Tro tàn xác lặng tủi người đi !
+
+Mùa thu, ký ức, tro tàn
 
 
 Ngỡ nhìn thu khóc vì thu lỡ
@@ -2396,11 +2402,15 @@ Giọt lệ hoen viền xóa vết lem
 Suốt mãi năm canh nghìn trăn trở
 Hồn trăng lạc bước thẹn bên rèm.
 
+Mùa thu, nỗi buồn, hẹn thề
+
 
 Mấy độ thu về thu lại thu
 Con đường xưa cũ kín sương mù
 Vàng phai đã nhuốm màu nắng đổ
 Vẳng tiếng chim gù với gió ru.
+
+Mùa thu, con đường xưa, tiếng chim
 
 
 Vẫn đó bầu trời những áng mây
@@ -2408,11 +2418,15 @@ Muôn chiều lá úa vẫn giăng đầy
 Ven hồ liễu rủ hàng suối tóc
 Ngỡ dáng ai về dưới hàng cây.
 
+Bầu trời, hàng cây, bóng liễu
+
 
 Từ ly buổi ấy ráng chiều phai
 Lặng lẽ bàn chân tiếng thở dài
 Kỷ niệm ai tìm trong xác lá
 Khi đường rẽ lối đã chia hai.
+
+Buổi chiều, thở dài, chia xa
 
 
 Thầm trách mùa thu đến làm chi
@@ -2420,11 +2434,15 @@ Mang sầu mang nhớ đến thầm thì
 Nghiêng hồn một thuở mùa trăng vỡ
 Lá đổ chiều nay lại ướt mi.
 
+Mùa thu, trăng vỡ, lá đổ
+
 
 Làm sao giấu được giọt lệ cay
 Phận kiếp vương mang đã đoạ đày
 Bến mộng thu về ôi quạnh quẽ
 Hoàng hôn một bóng dõi tình bay.
+
+Buồn tủi, hoàng hôn, đau khổ
 
 
 Thu chớm anh về không hỡi anh
@@ -2432,53 +2450,71 @@ Thu chớm anh về không hỡi anh
 Gió thổi từng cơn se sắt lạnh
 Lướt từng ngọn cỏ gió mong manh.
 
+Thu sang, lạnh lẽo, ao ước
 
-Thu đến…đông tàn em nhớ anh
+
+Thu đến đông tàn em nhớ anh
 Nhớ dáng hao hanh lấp sau mành
 Nhớ nụ hôn nồng sao tróng chánh
-Nhớ giấc mơ xưa…vỡ tan tành.
+Nhớ giấc mơ xưa vỡ tan tành.
+
+Lạnh lẽo, nhớ nhung, tan vỡ
 
 
 Nhớ lại mùa hè lướt qua nhanh
-Phượng rụng tả tơi…tím bằng lăng
+Phượng rụng tả tơi tím bằng lăng
 Thu đến anh đi hàng lệ đổ
 Đời em sầu khổ nhớ thương anh.
+
+Thu sang, chia ly, hè qua
 
 
 Mười mấy năm rồi nhớ không anh
 Nhớ kẻ lên thuyền dáng mong manh
 Bỏ lại bến xưa tê tái lạnh
-Vác mảnh trăng tà…gánh tương tư.
+Vác mảnh trăng tà gánh tương tư.
+
+Ký ức, lạnh lẽo, trăng tàn
 
 
 Ngồi lại một mình giữa trời thu
 Nhớ bóng phương nào độc lãng du
 Có nhớ về nơi đang ấp ủ
-Tình xưa nối lại một chiều thu.?
+Tình xưa nối lại một chiều thu
+
+Mùa thu, tình xưa, ký ức
 
 
 Thu về xác lá quyện chân côi
 Lòng lại chơi vơi nhớ một thời
 Cái tuổi tương tư giờ đã mất
-Chỉ còn lưu dấu một… Tình rơi
+Chỉ còn lưu dấu một Tình rơi
+
+Ký ức, thu sang, tương tư
 
 
 Thu chiều Đơn lẻ một hồn hoa
-Đường phố buồn tênh tủi… Gót ngà
+Đường phố buồn tênh tủi Gót ngà
 Lắc rắc mưa phùn cho lạnh má
-Ai còn luyến ái … Bóng người… xa …
+Ai còn luyến ái Bóng người xa
+
+Chiều thu, cô đơn, nhớ mong
 
 
 Thu đã đi vào trong tiếng thơ
-Đâu rồi một thuở tuổi hồng… mơ
+Đâu rồi một thuở tuổi hồng mơ
 Lạnh lẽo mưa thu nhòa lệ đổ
-Cho người cảm thán cảnh … Bơ vơ
+Cho người cảm thán cảnh Bơ vơ
+
+Thu sang, cô đơn, lạnh lẽo
 
 
 Thu sầu vương vấn lắm tình ai
 Đừng để hồn thu thở vắng dài
 Một chữ yêu kia làm khổ ải
-Trăm năm mai trúc… chớ dần phai…
+Trăm năm mai trúc chớ dần phai 
+
+Buồn khổ, níu kéo, mùa thu
 
 
 Trắng đêm tâm sự với riêng mình
@@ -2486,11 +2522,15 @@ Một giấc mơ tàn lúc bình minh
 Nắng vẫn chưa lên sương đã vỡ
 Đừng trách chi ai lỗi tại mình.
 
+Thức đêm, than thân, tâm sự
+
 
 Đừng nhớ đừng thương khỏi bẽ bàng
 Đừng đợi đò chiều đã sang ngang
 Đừng vớt trăng buồn rơi đáy nước
 Đừng nhặt cánh hoa đã úa tàn.
+
+Khuyên nhủ, đượm buồn, từ bỏ
 
 
 Đừng hẹn đừng thề lúc đơn côi
@@ -2498,11 +2538,15 @@ Nắng vẫn chưa lên sương đã vỡ
 Đừng để giọt sầu len khóe mắt
 Đừng tiếc vì sao mộng qua đời.
 
+Khuyên nhủ, đượm buồn, cô đơn
+
 
 Giọt nắng hanh hao buổi xế tà
 Ảo ảnh cuộc tình sẽ trôi xa
 Hạnh phúc ra đi đau còn lại
 Đêm trắng thương sầu ta khóc ta.
+
+Buồn tủi, thức đêm, sầu khóc
 
 
 Đêm về nổi nhớ lại lên ngôi
@@ -2510,11 +2554,15 @@ Nhớ lắm người ơi nhớ rã rời
 Nhớ mắt nhớ môi bờ vai ấm
 Nhớ sao là nhớ ngập hồn thôi.
 
+Nhớ nhung, người yêu, da diết
+
 
 Trăng trốn đâu rồi nơi đáy sông
-Trăng hơn trăng tủi gió biết không?
+Trăng hờn trăng tủi gió biết không?
 Gió cứ theo mây về phương đó
 Để trăng đơn lẻ xót xa lòng.
+
+Ngắm trăng, cô đơn, đau xót
 
 
 Muốn hỏi lục bình giữa dòng trôi
@@ -2522,11 +2570,15 @@ Vê đâu ơi hỡi cuộc tình tôi
 Sao không xuôi mãi về bên lở
 Tấp bãi bồi chi để ngậm ngùi?
 
+Dòng sông, buông xuôi, đau buồn
+
 
 Muốn mượn sao trời soi bóng đêm
 Tìm người kể tiếp chuyện tơ duyên
 Mặc kệ biển dâu đời đen bạc
 Tay nắm chặt tay thỏa ước nguyền.
+
+Ngắm sao, cô đơn, mong ước
 
 
 Thời gian lặng lẽ cứ trôi xa
@@ -2534,11 +2586,15 @@ Kỷ niệm ban đầu chẳng phôi pha
 Với anh em đã là người cũ
 Sao vẫn đong đầy nhớ thiết tha.
 
+Thời gian, nhớ nhung, chia tay
+
 
 Đêm trắng giọt sầu vương mắt môi
 Len lén gọi thầm tên ấy thôi
 Với anh em chỉ là người cũ
 Nên mảnh tình chung vỡ nát rồi.
+
+Thức đêm, đau xót, nhớ nhung
 
 
 Ký ức theo về trong bóng đêm
@@ -2546,11 +2602,15 @@ Tiếng gió canh tàn tê buốt tim
 Với anh em vẫn là người cũ
 Làm sao bôi xóa được nỗi niềm.
 
+Ký ức, nỗi nhớ, tình xưa
+
 
 Thu vắng gieo sầu trên lối xưa
 Tình ta ướt đẫm giữa màn mưa
 Với anh em mãi là người cũ
 Suốt kiếp đành ôm mối duyên thừa.
+
+Ký ức, mùa thu, mưa buồn
 
 
 Em chẳng bao giờ quên anh đâu
@@ -2558,11 +2618,15 @@ Bao đêm không ngủ mắt rưng sầu
 Cứ tưởng rằng anh không trở lại
 Thơ em viết mãi chẳng thành câu
 
+Ký ức, thương nhớ, không ngủ
+
 
 Em biết anh chẵng bỏ em đâu
 Thư anh đã nói rỏ đuôi đầu
 Nên em vẫn đợi và vẫn đợi
 Vì biết “người ta” chẳng quên đâu
+
+Ký ức, chờ đợi, mong ước
 
 
 Em biết trầu xanh thương mến cau
@@ -2570,11 +2634,15 @@ Mong vôi về để đậm thêm màu
 Thơ em sẽ không sầu đơn chiếc
 Có anh về tiếp để thành câu
 
+Mong ước, trầu cau, ước hẹn
+
 
 Em chẳng bao giờ xa anh đâu
 Hôm nay và mãi mãi về sau
 Dẫu thơ là ảo nhưng tình thật
 Em chẳng bao giờ hết yêu đâu
+
+Hẹn ước, say đắm, thơ tình
 
 
 Em biết trong ta còn có nhau
@@ -2582,11 +2650,15 @@ Dẫu người cuối bễ kẻ giang đầu
 Dăm câu thơ nhớ làm thêm nhớ
 Chắc chẳng bao giờ quên được đâu
 
+Hẹn ước, say đắm, thơ tình
+
 
 Ta chẳng bao giờ xa nhau lâu
 Chỉ mới vài giây đã nghe sầu
 Một ngày không gặp là nghe nhớ
 Trầu sẽ héo vì thương nhớ cau.
+
+Hẹn ước, trầu cau, nhớ nhung
 
 
 Anh đã đến bên bờ Hắc Hải
@@ -2594,17 +2666,23 @@ Ngày trong veo nắng trải biển êm
 Những lòng thông thì thào trên bãi
 Trời rất ta mà anh thiếu em
 
+Thiên nhiên, nhớ nhung, dòng nước 
+
 
 Hôm qua giặc ném bom Bãi Cháy
 Cành phi lao giập gẫy bên đường
 Màu hoa tím bầm như máu chảy
 Đêm hạ huyền rách cả màn sương
 
+Chiến tranh, hoang tàn, sương đêm
 
-Động trái tim ta – trời Hà Nội
+
+Động trái tim ta trời Hà Nội
 Ôi những cánh đào đất Nhật Tân
 Lửa thiêu đốt lửa bừng dữ dội
-Phố Mạc-tư-khoa rung dưới chân
+Phố Mạc tư khoa rung dưới chân
+
+Ngày tết, tan hoang, chiến tranh
 
 
 Thảm rừng đây giỡn đùa bóng sóc
@@ -2612,23 +2690,31 @@ Vòi nước tuôn chuỗi ngọc trong ngời
 Xa lạ quá. ðời ta đánh giặc
 Chẳng đang lòng mỗi lúc ngồi chơi
 
+Rừng cây, tươi sáng, chiến tranh
+
 
 Xin lỗi những rừng bạch dương Nga
 Hôm nay chẳng muốn nhìn cái đẹp
 Người còn đây, lòng đã về nhà
 Đứng tiếp đạn bên nòng súng thép
 
+Thiên nhiên, nhớ nhà, chiến tranh
+
 
 Mắt em gái hiền như mắt thỏ
 Nâng niu từng ngọn cỏ, mầm cây
-Nay giặc M đến nhà ta đó
+Nay giặc Mỹ đến nhà ta đó
 Em giết thù chẳng sợ run tay
+
+Chiến tranh, con gái, hiền ngoan
 
 
 Em ạ quê ta mùa đánh Mỹ
 Dòng sông vẫn gọi những lời thơ
 Đem cả tình yêu làm vũ khí
-Xanh biếc lòng thông vẫn đợi chờ…
+Xanh biếc lòng thông vẫn đợi chờ 
+
+Thiên nhiên, chiến tranh, êm ả
 
 
 Ta có trong năm tháng bạn bè
@@ -2636,11 +2722,15 @@ Trong lối mòn xưa cỏ rêu che
 nửa đời chìm nổi về bên bạn
 lại vui như chẳng nắng sương gì
 
+Tình bạn, khó khăn, yên bình
+
 
 Ta có trong năm tháng bạn bè
 mạ trong ngọn gió lạnh lùng khuya
 cha trong hạt cát đêm sao hiện
 và em trong đèo núi cách chia
+
+Cô đơn, tình bạn, đêm khuya
 
 
 ta có trong năm tháng bạn bè
@@ -2648,11 +2738,15 @@ niềm thương nổi nhớ với say mê
 câu thơ thức đến canh gà muộn
 tóc bạc bên đèn đọc nhau nghe
 
+Tình bạn, thức đêm, thơ ca
+
 
 ta như sóng ấy dễ tan đi
 bạn là ghềnh đá dấu ta ghi
 những gì sâu thẳm ngoài vô tận
 đều có cho ta giữa bạn bè
+
+Tình bạn, 
 
 
 rét quá nên thơ không thể ngủ
@@ -2700,11 +2794,11 @@ Mả mồ cỏ mọc đã rêu xanh!
 Bạn bè ta giờ còn mấy đứa?
 Biệt tăm từ một bữa tan hàng
 Cuộc đổi đời cũng chưa dài lắm
-Vậy mà như đã lạnh khói nhang…
+Vậy mà như đã lạnh khói nhang 
 
 
 Anh có nhớ thuở còn đi học
-Hai đứa mình,…bạn chọc ghép đôi.
+Hai đứa mình, bạn chọc ghép đôi.
 Chiều chiều tan lớp, lên đồi
 Hái từng trái chín, đưa môi nhem thèm.
 
@@ -2722,9 +2816,9 @@ Bây giờ mang nỗi vấn vương trong lòng.
 
 
 Khi xa cách thầm mong tương hội
-Gặp lại rồi…bối rối như xưa
+Gặp lại rồi bối rối như xưa
 Lòng anh biết nói sao vừa
-Yêu em nhiều lắm mà chưa tỏ tình…!!!
+Yêu em nhiều lắm mà chưa tỏ tình !!!
 
 
 Thôi ! Thì cứ lặng thinh như vậy !
@@ -2735,29 +2829,29 @@ Chẳng ai hay biết,..Bạn cùng học thôi.
 
 Những mơ ước, của hồi thơ dại
 Mãi không quên hương trái đầu mùa
-Vị đời ngọt ngọt, chua chua…
-Như bao câu nói..thật, đùa khó quên….!
+Vị đời ngọt ngọt, chua chua 
+Như bao câu nói..thật, đùa khó quên .!
 
 
-Dòng lưu bút…sổ tay còn đó
-Hè lại về… phượng đỏ sân trường
+Dòng lưu bút sổ tay còn đó
+Hè lại về phượng đỏ sân trường
 Người nay tóc đã điểm sương
 Mà bao kỉ niệm vấn vương trong lòng
 
 
-Có những lúc… ước mong trở lại
-Cái thời mà… dưới mái trường xưa
+Có những lúc ước mong trở lại
+Cái thời mà dưới mái trường xưa
 Cùng nhau đùa nghịch sớm trưa
 Thương thầm nhớ trộm đón đưa cuối chiều
 
 
-Tình khờ dại… cô liêu lẻ bóng
-Chỉ đơn phương…ca vọng khúc tình
+Tình khờ dại cô liêu lẻ bóng
+Chỉ đơn phương ca vọng khúc tình
 Rằng người thiếu nữ dáng xinh
 Yêu mà không dám tỏ tình là sao
 
 
-Dòng lưu bút… đi vào tâm trí
+Dòng lưu bút đi vào tâm trí
 Bao năm rồi.. ngự trị trong tim
 Nổi trôi cuộc sống kiếm tìm
 Mỗi mùa phượng nở đắm chìm nhớ nhung.
@@ -3306,10 +3400,10 @@ Bạn buồn tôi sẽ kề vai
 Đừng bao giờ để bi ai tủi hờn
 
 
-Bạn nhớ nhé…cô đơn ..hãy đến
+Bạn nhớ nhé cô đơn ..hãy đến
 Những bạn bè là bến yêu thương
 Mãi luôn giúp bạn kiên cường
-Xóa tan phiền não, sầu vương… giã từ!!!
+Xóa tan phiền não, sầu vương giã từ!!!
 
 
 Em hứa yêu anh trọn một đời
@@ -3553,13 +3647,13 @@ Lá trúc che ngang mặt chữ điền.
 
 
 Gió theo lối gió, mây đường mây,
-Dòng nước buồn thiu, hoa bắp lay…
+Dòng nước buồn thiu, hoa bắp lay 
 Thuyền ai đậu bến sông Trăng đó,
 Có chở trăng về kịp tối nay?
 
 
 Mơ khách đường xa, khách đường xa
-Áo em trắng quá nhìn không ra…
+Áo em trắng quá nhìn không ra 
 Ở đây sương khói mờ nhân ảnh
 Ai biết tình ai có đậm đà?
 
@@ -5353,7 +5447,7 @@ Ai cho mật ngọt tháng ngày ngóng trông
 Khuya về mộng rót sương bay
 Dải vuông lụa yếm trăng say níu cài
 Đào nguyên lối mộng trúc mai
-Còn thương mấy độ xứ mây ngõ Đoài…
+Còn thương mấy độ xứ mây ngõ Đoài 
 
 
 Bà ru cháu ngủ cho say
@@ -5477,7 +5571,7 @@ Lạc đàn khuya khoắt Vạc quên lối về
 
 
 Nửa đời giữa xứ văn minh
-Cô đơn…sóng cả…quanh mình… đảo chao…
+Cô đơn sóng cả quanh mình đảo chao 
 Nửa đời tỉnh giấc chiêm bao
 Giữa lòng nhân thế cồn cào buồn thương
 
@@ -5536,7 +5630,7 @@ Xuân đi dù chẳng vội vàng
 Đã quên mưa bụi trên hàng cây xanh
 
 
-Mồ hôi thấm ướt cánh diều  
+Mồ hôi thấm ướt cánh diều 
 Nhớ nhung ướt cả những điều trong thơ
 Thương mình cứ mãi ngẩn ngơ
 Mồ côi cả một giấc mơ đêm về. 
@@ -5635,7 +5729,7 @@ Ta đưa ta dắt nhau vào đêm say!
 Gió lay vạt lụa dịu dàng
 Em nghiêng dáng liễu tơ vàng làm duyên 
 Tim ta thổn thức niềm riêng
-Tìm quên mộng mị cô miên…giấc đời
+Tìm quên mộng mị cô miên giấc đời
 
 
 Mõ gầy thỉnh khúc tương tư
@@ -5663,7 +5757,7 @@ Làm: dâu, vợ, mẹ, tớ quèn, chủ lo
 
 
 Biết là tình thực hay mơ
-Mà hoa cháy đỏ mong chờ…không phai
+Mà hoa cháy đỏ mong chờ không phai
 Chờ em trong nắng ban mai
 Thướt tha tà áo lụa dài bay bay
 
@@ -5701,7 +5795,7 @@ ta lo nghèo nhất nỗi niềm cạn khô
 Mõ rung như có sóng gầm
 Biển nghe vọng khúc thì thầm từ bi
 Nữa vãng cảnh, nửa lễ nghi
-Nửa vui hội, nửa rầm rì… cửa thiêng!
+Nửa vui hội, nửa rầm rì cửa thiêng!
 
 
 Hôm nay ngõ nhỏ nhà quê
@@ -5722,10 +5816,10 @@ Nụ cười em tuổi thanh tân
 Ròn tan như nắng trong ngần quê hương
 
 
-Cây dài bóng xế ngẩn ngơ…
+Cây dài bóng xế ngẩn ngơ 
 Hồn em đã chín mấy mùa thương đau?
 Tay anh em hãy tựa đầu,
-Cho anh nghe nặng trái sầu rụng rơi…
+Cho anh nghe nặng trái sầu rụng rơi 
 
 
 Ừ mai rồi sẽ một mai
@@ -5776,7 +5870,7 @@ Sau vườn gốc bụt hết đơm hoa
 Ước gì đông chỉ lướt nhanh qua!
 
 
-Miền trung ơi biết nói gì đây  
+Miền trung ơi biết nói gì đây 
 Lũ chưa rút bão đã quay trở lại 
 Khúc ruột nối liền nước nhà một dải
 Bao đau thương đeo bám mãi quê nghèo
@@ -5788,10 +5882,10 @@ Giữa thời bình có biết bao đồng đội
 Hiến thân mình vì cuộc sống bình yên
 
 
-Thương quê nghèo,  bão lụt cứ triền miên
+Thương quê nghèo, bão lụt cứ triền miên
 Vất vả quanh năm, vẫn không no đủ
 Hạ đến khô cằn, thu về bão lũ
-Đông rét run người,  giấc ngủ chẳng yên
+Đông rét run người, giấc ngủ chẳng yên
 
 
 Đoàn kết lên, hỡi con cháu rồng tiên
