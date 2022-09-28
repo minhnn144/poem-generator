@@ -1,77 +1,60 @@
-from lib import data_utils, vnlp
-from lib.dictionary import Dictionary
-import re
+import json
 from tqdm import tqdm
-import logging
-import warnings
 
+from lib import dictionary, vnlp, data_utils
+from lib.data_utils import SPECIAL_CONTROLS
 
-word_vec_size = 300
-embed_size = 301
-hid_size = 200
-seq_len = 35
+data_path = 'raws/output.json'
+output_path = 'raws/toks.json'
+fasttext_bin_path = 'raws/wiki.vi.bin'
+poem_tok_number = 32    # = 7 * 4 + 3 + 2 - 1
+vectorized_path = 'vectorized/data.json'
+dictionary_path = '/data/vectorized/dict.pkl'
+config_path = '/data/vectorized/config.ini'
 
-config_path = "/config.ini"
+nlp = vnlp.VNlp(fasttext_bin_path)
+word_dimension = nlp.word_dimension
+word_dict = dictionary.Dictionary(word_dimension + 1)   # +1 for special tokens
 
-warnings.filterwarnings("ignore")
-logging.basicConfig(level=logging.INFO, format='%(asctime)s: %(message)s')
-logging.info('Setting up dictionary and nlp module')
-dictionary = Dictionary(vector_size=embed_size)
-nlp = vnlp.VNlp('../model/wiki.vi.bin')
-control_toks = ["<SOS>", "<EOS>", "<PAD>", "<BRK>"]
-for tok in control_toks:
-    dictionary.add_word(tok, nlp.to_vector(tok))
+for idx, tok in enumerate(SPECIAL_CONTROLS):
+    word_dict.add_word(tok, [0] * word_dimension + [idx + 1])
 
-blacklist_token = "[\W_]+"
-inp_list = []
-ctr_list = []
-out_list = []
-data_path = "./raws/input.txt"
-logging.info('Loading raw data at {}'.format(data_path))
-with open(data_path, 'r') as f:
-    raw = f.read()
-    poems = raw.split("\n\n\n")
-    for block in tqdm(poems):
-        part = block.split("\n\n")
+with open(data_path, 'r', encoding='utf8') as data:
+    json_data = json.load(data)
+    poems = json_data["poems"]
+    inp_toks = []
+    out_toks = []
+    sen_toks = []
+    for poem in tqdm(poems):
+        temp_inp_tok = []
+        for tok in poem["tokens"][:-1]:
+            tok_vector = nlp.to_vector(tok)
+            tok_idx = word_dict.add_word(tok, tok_vector + [0])
 
-        ctrs = part[1].split(',')
-        ctr_list.append(nlp.combined_vector(ctrs))
+            temp_inp_tok.append(tok_idx)
+            inp_tok = [word_dict.word2idx.get(SPECIAL_CONTROLS[2])] * (poem_tok_number - len(temp_inp_tok)) + temp_inp_tok
+            inp_toks.append(inp_tok)
+            out_toks.append(tok_idx)
+        del out_toks[0]
+        out_toks.append(word_dict.word2idx.get(SPECIAL_CONTROLS[1]))
+        temp_sen_tok = []
+        for tok in poem["sentiments"]:
+            tok_vector = nlp.to_vector(tok)
+            tok_idx = word_dict.add_word(tok, tok_vector + [0])
+            temp_sen_tok.append(tok_idx)
+        sen_toks.append(temp_sen_tok)
 
-        p = part[0]
-        lines = p.split("\n")
-        p_toks = []
-        p_vecs = []
-        for l in lines:
-            l_norm = re.sub(blacklist_token, " ", l.lower())
-            l_norm = re.sub("\s+", " ", l_norm)
-            l_toks = l_norm.split(" ") + ["<BRK>"]
-            for t in l_toks:
-                idx = dictionary.add_word(t, nlp.to_vector(t))
-                p_toks.append(idx)
-                p_vecs.append(dictionary.vectors[idx])
-        del p_toks[-1]
-        del p_vecs[-1]
-
-        inp_toks = [dictionary.vectors[dictionary.word2idx["<SOS>"]]] + p_vecs
-        inp_toks = inp_toks[:seq_len] + \
-            [dictionary.vectors[dictionary.word2idx["<PAD>"]]] * (seq_len - len(inp_toks))
-        out_toks = p_toks + [dictionary.word2idx["<EOS>"]]
-        out_toks = out_toks[:seq_len] + \
-            [dictionary.word2idx["<PAD>"]] * (seq_len - len(out_toks))
-        inp_list.append(inp_toks)
-        out_list.append(out_toks)
-logging.info("Saving pre-processed data to file")
-data_utils.pickle_data('/data/vectorized/inp_idx.pkl', inp_list)
-data_utils.pickle_data('/data/vectorized/ctr_idx.pkl', ctr_list)
-data_utils.pickle_data('/data/vectorized/out_idx.pkl', out_list)
-data_utils.pickle_data('/data/vectorized/word_list.pkl', dictionary)
-
-logging.info("Vocabulary size: {}".format(len(dictionary)))
-logging.info("Saving configuration")
-config = {
-    "hid_size": hid_size,
-    "emb_size": embed_size,
-    "word_size": len(dictionary),
-    "seq_len": seq_len
-}
-data_utils.save_config(config_path, config)
+    with open(vectorized_path, 'w') as output:
+        json.dump({
+            "INPUT": inp_toks,
+            "OUTPUT": out_toks,
+            "SENTIMENT": sen_toks
+        }, output)
+    
+    data_utils.pickle_data(dictionary_path, word_dict)
+    config = {
+        "BOW_SIZE": len(word_dict),
+        "SEQ_LEN": poem_tok_number
+    }
+    data_utils.save_config(config_path, config)
+    

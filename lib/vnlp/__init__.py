@@ -4,6 +4,7 @@ import fasttext
 class VNlp:
     def __init__(self, model):
         self.ft = fasttext.load_model(model)
+        self.word_dimension = self.ft.get_dimension()
 
     def to_vector(self, word: str):
         control_toks = {

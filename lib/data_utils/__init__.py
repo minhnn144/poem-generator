@@ -4,6 +4,7 @@ import configparser
 
 root = os.getenv("PYTHONPATH")
 
+SPECIAL_CONTROLS = ('<SOS>', '<EOS>', '<PAD>', '<BRK>')
 
 def pickle_data(path, data):
     with open(root + path, 'wb') as f:

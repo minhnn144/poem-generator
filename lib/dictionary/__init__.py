@@ -12,9 +12,6 @@ class Dictionary:
             self.word2idx[word] = len(self.idx2word) - 1
             if vector is None:
                 self.vectors.append(self.default_vector)
-            elif vector.size != self.vector_size:
-                print("Vector size not match")
-                return None
             else:
                 self.vectors.append(vector)
         return self.word2idx[word]
