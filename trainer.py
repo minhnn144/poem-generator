@@ -14,20 +14,20 @@ parser.add_argument("--dev", action="store_true")
 parser.add_argument("--overfit", action="store_true")
 parser.add_argument("--fixed", action="store_true")
 parser.add_argument("--gpu", type=int, default=0)
-parser.add_argument("--batch", type=int, default=64)
+parser.add_argument("--batch", type=int, default=10)
 parser.add_argument("--epoch", type=int, default=100)
-parser.add_argument("--lr", type=float, default=0.0001)
-parser.add_argument("--config", type=str, default="/config.ini")
+parser.add_argument("--lr", type=float, default=0.1)
+parser.add_argument("--config", type=str, default="/data/vectorized/config.ini")
 parser.add_argument("--resume", type=str, default="")
 
 args = parser.parse_args()
 
 config = data_utils.load_config(args.config)
 
-embed_size = config.getint('DEFAULT', 'emb_size')
-word_size = config.getint('DEFAULT', 'word_size')
-hid_size = config.getint('DEFAULT', 'hid_size')
-seq_len = config.getint('DEFAULT', 'seq_len')
+embed_size = 301
+word_size = config.getint('DEFAULT', 'BOW_SIZE')
+hid_size = 200
+seq_len = config.getint('DEFAULT', 'SEQ_LEN')
 
 checkpoint_callback = ModelCheckpoint(filename='{epoch}-{step}.ckpt', save_last=True)
 
@@ -48,5 +48,5 @@ else:
         model = PoemGeneratorLightning.load_from_checkpoint(args.resume, strict=True, word_size=word_size, embed_size=embed_size, hid_size=hid_size, seq_len=seq_len, lr=args.lr, batch_size=args.batch)
     else:
         model = PoemGeneratorLightning(word_size, embed_size, hid_size, seq_len, lr=args.lr, batch_size=args.batch)
-    trainer = pl.Trainer(fast_dev_run=args.dev, max_epochs=args.epoch, gpus=args.gpu, checkpoint_callback=checkpoint_callback)
+    trainer = pl.Trainer(fast_dev_run=args.dev, max_epochs=args.epoch)
     trainer.fit(model)

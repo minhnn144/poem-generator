@@ -30,3 +30,9 @@ class VNlp:
             vecs.append(self.to_vector(w))
         vecs = np.asfarray(vecs)
         return np.mean(vecs, axis=0)
+
+    @staticmethod
+    def generate_bow_vector(word_size, index):
+        res = [0] * word_size
+        res[index] = 1
+        return np.array(res, dtype=np.float64)

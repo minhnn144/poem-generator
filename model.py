@@ -9,28 +9,31 @@ from torch.optim.adam import Adam
 class Encoder(nn.Module):
     def __init__(self, inp_size, hid_size):
         super(Encoder, self).__init__()
-        self.BiLSTM = nn.LSTM(inp_size, hid_size, num_layers=3, bidirectional=True)
-        self.Linear = nn.Linear(hid_size * 2, hid_size)
+        self.BiLSTM = nn.GRU(inp_size, hid_size, num_layers=3)
+        self.Linear = nn.Linear(hid_size, hid_size)
 
     def forward(self, inp):
-        out, (hid, cel) = self.BiLSTM(inp)
+        out, hid = self.BiLSTM(inp)
         out = self.Linear(out)
         out = torch.tanh(out)
-        return out, hid, cel
+        return out, hid
 
 
 class Decoder(nn.Module):
-    def __init__(self, inp_size, hid_size, out_size):
+    def __init__(self, inp_size, hid_size, window_size, word_size):
         super(Decoder, self).__init__()
+        self.window_size = window_size
         self.GRU = nn.GRU(inp_size, hid_size, num_layers=3, batch_first=True)
-        self.Linear = nn.Linear(hid_size, out_size)
+        self.Linear = nn.Linear(hid_size, 1)
+        self.Combiner = nn.Linear(window_size, word_size)
 
     def forward(self, inp):
         out, hid = self.GRU(inp)
-        _out = out.reshape(out.size(0) * out.size(1), out.size(2))
+        _out = out.reshape(-1, out.size(2))
         _out = self.Linear(_out)
-        out = _out.reshape(out.size(0), out.size(1), -1)
-        out = torch.relu(out)
+        _out = _out.reshape(-1, self.window_size)
+        _out = self.Combiner(_out)
+        out = torch.sigmoid(_out)
         return out
 
 class PoemGeneratorModel(nn.Module):
@@ -38,17 +41,11 @@ class PoemGeneratorModel(nn.Module):
         super().__init__()
         self.Encoder = Encoder(embed_size, hid_size)
         self.sentiment = nn.Linear(embed_size, hid_size)
-        self.scale = nn.Linear(hid_size*2, hid_size)
-        self.Decoder = Decoder(hid_size, hid_size, word_size)
+        self.scale = nn.Linear(hid_size * 2, hid_size)
+        self.Decoder = Decoder(hid_size, hid_size, 10, word_size)
     
     def forward(self, input, sen):
-        out, hid, cel = self.Encoder(input)
-        sent = self.sentiment(sen)
-        sent = torch.sigmoid(sent)
-        sent = sent.reshape(out.size(0), -1, sent.size(-1))
-        sent = sent.repeat(1, out.size(1), 1)
-        out = torch.cat([out, sent], dim=2)
-        out = self.scale(out)
+        out, hid = self.Encoder(input)
         out = self.Decoder(out)
         return out
 
@@ -67,9 +64,9 @@ class PoemGeneratorLightning(pl.LightningModule):
         return self.model(inp, att)
 
     def setup(self, stage: str):
-        inp_ = "/data/vectorized/inp_idx.pkl"
-        ctr_ = "/data/vectorized/ctr_idx.pkl"
-        out_ = "/data/vectorized/out_idx.pkl"
+        inp_ = "/data/vectorized/inp.pkl"
+        ctr_ = "/data/vectorized/sen.pkl"
+        out_ = "/data/vectorized/out.pkl"
         dataset = PoemDataset(inp_, ctr_, out_)
         train_size = int(0.8 * len(dataset))
         val_size = len(dataset) - train_size
@@ -87,14 +84,11 @@ class PoemGeneratorLightning(pl.LightningModule):
     def training_step(self, batch, batch_idx):
         inp, att, out = batch
         predict = self(inp, att)
-        predict = predict.reshape(-1, self.word_size, self.seq_len)
         loss = F.cross_entropy(predict, out)
-        self.log('train_loss', loss)
         return loss
 
     def validation_step(self, batch, batch_idx):
         inp, att, out = batch
         predict = self(inp, att)
-        predict = predict.reshape(-1, self.word_size, self.seq_len)
         val_loss = F.cross_entropy(predict, out)
         self.log('val_loss', val_loss)

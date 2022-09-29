@@ -15,10 +15,9 @@ class PoemDataset(Dataset):
     def __getitem__(self, index):
         if torch.is_tensor(index):
             index = index.tolist()
-        
         inp = torch.FloatTensor(self.inp[index])
         ctr = torch.FloatTensor(self.ctr[index])
-        out = torch.LongTensor(self.out[index])
+        out = torch.FloatTensor(self.out[index])
 
         sample =(inp, ctr, out)
 
